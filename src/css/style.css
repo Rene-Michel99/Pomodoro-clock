@@ -116,6 +116,40 @@ body{
 .minutes{
   animation: rotation 3600s linear infinite;
 }
+@media(min-width: 1020px){
+  #clock{
+    position:absolute;
+    width: 120px;
+    height:120px;
+    left:45%;
+    top:5%;
+    background-color:blue;
+    background-size: 100%;
+    border-radius:50%;
+    border: 5px solid #4b3621;
+    box-shadow: 5px 5px 5px black;
+  }
+  #start-btn{
+    position:absolute;
+    top:35%;
+    left:56%;
+    border:0px;
+    border-radius:4px;
+    background-color:yellow;
+    width:85px;
+    height:20px;
+    font-family: monospace;
+    font-size: 14px;
+  }
+  #current-time{
+    position:absolute;
+    top:70%;
+    left:47%;
+    font-family: monospace;
+    font-size:32px;
+    color:white;
+  }
+}
 
 @keyframes rotation {
   100%{
