@@ -1,0 +1,163 @@
+:root{
+  --morning: linear-gradient(#de6262, #ffb88c);
+  --afternoon: linear-gradient( #ede574,#e1f5c4);
+  --night: linear-gradient(#283E51, #0A2342);
+
+  --moon: linear-gradient(gray,black);
+  --sun-width: 100px;
+  --sun-height: 100px;
+}
+body{
+  margin:0px;
+}
+#time-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:450px;
+  background-color: #de6262;
+  animation: day 60s linear infinite;
+}
+#sun{
+  position:relative;
+  width: var(--sun-width);
+  height: var(--sun-height);
+  background-color: yellow;
+  border-radius:50%;
+  box-shadow: 0px 0px 5px 5px white;
+  animation: move-sun 60s linear infinite;
+}
+#mountain{
+  position: relative;
+  bottom: 50px;
+  height:100px;
+  background: linear-gradient(#006600,#00ee00);
+  border-radius:50%;
+}
+#container{
+  bottom: 100px;
+  width: 100%;
+  height: 200px;
+  background-color: #009900;
+  position: absolute;
+  top:75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#clock{
+  position:absolute;
+  width: 120px;
+  height:120px;
+  left:38%;
+  top:5%;
+  background: url("../img/dial.jpg");
+  background-size: 100%;
+  border-radius:50%;
+  border: 5px solid #4b3621;
+  box-shadow: 5px 5px 5px black;
+}
+#pointer{
+  position: absolute;
+  background-color:black;
+  transform-origin: 50% 80%;
+  border-radius:4px;
+  top:10%;
+  left:50%;
+  width: 5px;
+  height:50%;
+}
+#pointer_m{
+  position:absolute;
+  background-color:gray;
+  transform-origin: 50% 80%;
+  border-radius:4px;
+  top:10%;
+  left:50%;
+  width: 5px;
+  height:55%;
+}
+#bilhotinho{
+  position:absolute;
+  border-radius:50%;
+  background-color:black;
+  bottom:43%;
+  left:46%;
+  width:15px;
+  height:15px;
+}
+#start-btn{
+  position:absolute;
+  top:35%;
+  left:65%;
+  border:0px;
+  border-radius:4px;
+  background-color:yellow;
+  width:85px;
+  height:20px;
+  font-family: monospace;;
+  font-size: 14px;
+}
+#start-btn:hover{
+  transform: scale(1.2);
+  box-shadow: 2px 2px 2px rgba(255,255,0,0.5);
+}
+#current-time{
+  position:absolute;
+  top:70%;
+  left:46%;
+  font-family: monospace;
+  color:white;
+}
+.seconds{
+  animation: rotation 60s linear infinite;
+}
+.minutes{
+  animation: rotation 3600s linear infinite;
+}
+
+@keyframes rotation {
+  100%{
+    transform:rotateZ(360deg);
+  }
+}
+
+@keyframes day {
+  0%{
+    background-color: #de6262;
+  }
+  20%{
+    background-color: #ffb88c;
+  }
+  40%{
+    background-color: #ede574;
+  }
+  60%{
+    background-color: #e1f5c4;
+  }
+  80%{
+    background-color: ##283E51;
+  }
+  100%{
+    background-color: #0A2342;
+  }
+
+}
+
+@keyframes move-sun{
+  0%{
+    bottom:-65%;
+  }
+  50%{
+    bottom:50%;
+  }
+  60%{
+    bottom:50%;
+    background-color:gray;
+  }
+  100%{
+    bottom:-65%;
+    background-color: white;
+  }
+}
